@@ -14,5 +14,21 @@ datasource db {
 }
 
 model User{
-  id INT 
+  id Int @default(autoincrement()) @id
+  username String @unique
+  token String @unique
+
+  email String @unique
+  phoneNumber String @unique
+
+  dob DateTime
+  gender String
+  age Int
+
+  country String
+  city String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
+
